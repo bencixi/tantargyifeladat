@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a>Invitation Manager</a></div>
+            </div>
+        </header>
+        <main>
+            <section id="home">
+                    <div class="centerBox">
+                        <div class="text">
+                            <ng-container *ngIf="user != null">
+                                <div class="img">
+                                    <tr><img src="../../../assets/Matuesz Morawiecki.png"></tr>
+                                </div>
+                                <div class="data">
+                                    <tr>Név: {{user.data.name}}</tr>
+                                    <tr>Email: {{user.data.email}}</tr>
+                                    <tr>Telefonszám: {{user.data.telefonszam}}</tr>
+                                    <tr>Érzékenység: {{user.data.erzekenysegek}}</tr>
+                                    <tr>Vallás: {{user.data.vallas}}</tr>
+                                    <tr>Fogyatékosság: {{user.data.fogyatekossag}}</tr>
+                                    <tr>Titulus: {{user.data.titulus}}</tr>
+                                    <tr>Utolsóesemény: {{user.data.utolsoesemeny}}</tr>
+                                </div>                              
+                                <div class="btns">
+                                    <a class="action_btn" (click)="deletePerson(userid)" routerLink="/home">Felhasználó törlése</a>
+                                    <a class="action_btn" routerLink="/home">Vissza</a>
+                                </div>
+                                
+                            </ng-container>                                             
+                        </div>                          
+                    </div>                            
+            </section>
+        </main>
+    </body>
+</html>

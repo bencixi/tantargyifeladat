@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a>Invitation Manager</a></div>
+            </div>
+        </header>
+        <main>
+            <section id="home">
+                    <div class="centerBox">
+                        <div class="text">
+                            <form class="text" #userForm="ngForm" (ngSubmit)="onUserCreate(userForm.value)">
+                                    <label for="new-user">Email: <input type="text"  name="email" ngModel> </label >              
+                                    <label  for="new-user">Telefonszám: <input type="text" name="telefonszam" ngModel></label >               
+                                    <label  for="new-user">Érzekenysegek: <input type="text" name="erzekenysegek" ngModel></label >               
+                                    <label  for="new-user">Fogyatékosság: <input type="text"  name="fogyatekossag" ngModel></label >               
+                                    <label  for="new-user">Vallás: <input type="text"  name="vallas" ngModel></label >
+                                    <label  for="new-user">Titulus: <input type="text"  name="titulus" ngModel></label >               
+                                    <label  for="new-user">Utolsó esemény: <input type="text"  name="utolsoesemeny" ngModel></label >                
+                                    <label  for="new-user">ProfilePic (url): <input type="text"  name="ProfilePic" ngModel></label >                
+                                    <label  for="new-user">Név: <input type="text"  name="name" ngModel></label >                
+                                    <input class="button" type="submit"  value="Új felhasználó">
+                                    <a class="action_btn" routerLink="/home">Vissza</a>                             
+                            </form>
+                        </div>                          
+                    </div>                            
+            </section>
+        </main>
+    </body>
+</html>
+

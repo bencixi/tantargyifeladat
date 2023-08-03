@@ -1,0 +1,73 @@
+<div class="full-height">
+    <div class="custom-width">
+      <ng-container *ngIf="loading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </ng-container>
+      <mat-card>
+        <mat-card-content>
+          <div class="content-wrapper">
+            <div class="title">Edit Your InvitationManager Account</div>
+          </div>
+          <form [formGroup]="form" autocomplete="off" (ngSubmit)="submit()">
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input type="text" matInput formControlName="Email" placeholder="Ex. pat@example.com" />
+              <mat-error *ngIf="form.hasError('email', 'Email')"> Please type valid email </mat-error>
+              <mat-error *ngIf="form.hasError('required', 'Email')">
+                Please type your email
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Name</mat-label>
+              <input type="text" matInput formControlName="Name" placeholder="JaniVagyok" />
+              <mat-error *ngIf="form.hasError('required', 'Name')">
+                Please type your name
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input
+                [type]="showPassword ? 'text' : 'password'"
+                matInput
+                formControlName="Password"
+                placeholder="Ex. example69"
+              />
+              <mat-icon matSuffix (click)="togglePasswordVisibility()">{{
+                showPassword ? 'visibility_off' : 'visibility'
+              }}</mat-icon>
+              <mat-error *ngIf="form.hasError('required', 'Password')">
+                Please enter your password
+              </mat-error>
+            </mat-form-field>
+  
+            <app-phone-input [hasFormControlName]="'phone'" [hasFormGroup]="configurationForm"></app-phone-input>
+  
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Role</mat-label>
+              <input type="text" matInput formControlName="Role" placeholder="president" />
+              <mat-error *ngIf="form.hasError('required', 'Role')">
+                Please type your role
+              </mat-error>
+            </mat-form-field>
+  
+            <div class="button mt-15">
+              <button
+                class="loading w-100"
+                type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled]="form.invalid || loading"
+              >
+                <ng-container *ngIf="loading"> Signing up... </ng-container>
+                <ng-container *ngIf="!loading"> Sign up </ng-container>
+              </button>
+            </div>
+          </form>
+          <div class="mt-30">
+            <a [routerLink]="['/', 'dashboard']">return the dashboard</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

@@ -1,0 +1,113 @@
+.button {
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+    background-color: #df8f27;
+    border: 0;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.menuText {
+    height: 40px;
+    background-color: #d79e10;
+    text-align: center;
+}
+.text {
+    font-size: 40;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;   
+}
+
+.table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+}
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('../../../assets/hatter.jpg');
+    background-position: center;
+    background-size: 2000px;   
+}
+main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    text-align: center
+    
+}
+
+.display {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    height: 100%;
+    padding: 40px;
+    overflow: hidden;
+}
+.centerBox {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 85%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    background: rgba(189, 116, 38, 0.75);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 2px 4px 39px 29px rgba(138,97,54,0.61);   
+}
+a {
+    color: aliceblue;
+    font-size: 1rem;
+    text-decoration: none;
+}
+tr {
+    font-size: larger;
+    font-weight: bold;
+}
+a:hover {
+    color: orange;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+input {
+    background-color: rgb(201, 135, 49);
+    border: none;
+    height: 20px;
+    margin: 0.2rem;
+}

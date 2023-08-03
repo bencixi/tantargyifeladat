@@ -1,0 +1,122 @@
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('../../../assets/hatter.jpg');
+    background-position: center;
+    background-size: 2000px;   
+}
+main {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    text-align: center
+    
+}
+.text {
+    font-size: 100;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;  
+    
+}
+
+.display {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    height: 100%;
+    padding: 40px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+.centerBox {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    height: 85%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    background: rgba(189, 116, 38, 0.75);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 2px 4px 39px 29px rgba(138,97,54,0.61);   
+}
+a {
+    color: aliceblue;
+    font-size: 3rem;
+    text-decoration: none;
+}
+tr {
+    font-size: larger;
+    font-weight: bold;
+}
+a:hover {
+    color: orange;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.action_btn {
+    background-color: orange;
+    color: aliceblue;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.20;
+    color: #fff;
+    box-shadow: 2px 4px 39px 29px rgba(138,97,54,0.29)
+}
+
+.data {
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.img {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:-10%;
+    left: 50%;
+    height: 85%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    margin-top: 60px;
+}

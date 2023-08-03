@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="logo"><a>Invitation Manager</a></div>
+                <ul class="links">
+                    <li><a (click)="activeButton(1)" class="szemely_button">Személy lista</a></li>
+                    <li><a (click)="activeButton(2)" class="rendezveny_button">Rendezvény kezelő</a></li>
+                </ul>
+                <a href="#" class="action_btn">Kijelentkezés</a>
+                <div class="toggle_btn" (click)="btnClick()">
+                    <img src="../../../assets/menuIcon.png" class="img">
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="szemelyek">Személy lista</a></li>
+                <li><a href="rendezveny">Rendezvény kezelő</a></li>
+                <li><a href="#" class="action_btn">Kijelentkezés</a></li>
+            </div>
+        </header>
+        <main>
+            <section id="home">
+                <div *ngIf="menuIconClick">
+                    <div class="centerBox">
+                    <div [ngSwitch]="showePage">
+                        <div *ngSwitchCase="'SzemnelyPageDisplay'"><app-person></app-person></div>
+                        <div *ngSwitchCase="'RendezvenyPageDisplay'"><app-dashboard></app-dashboard></div>
+                        <div *ngSwitchCase="'ProfilePageDisplay'"></div>
+                    </div>  
+                    </div>                            
+               </div>
+            </section>
+        </main>
+    </body>
+</html>

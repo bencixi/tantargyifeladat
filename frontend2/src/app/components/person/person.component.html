@@ -1,0 +1,39 @@
+<body>
+    <main class="table">
+        <section class="table_header">
+            <h1 style="font-size: larger;">Meghívható személyek listája</h1>
+            <div class="input-group">
+                <img src="../../../assets/search.png">
+            </div>
+        </section>
+        <section class="table_body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ProfilKép</th>
+                        <th>Név</th>
+                        <th>Email</th>
+                        <th>Érzékenység</th>
+                        <th>Titulus</th>
+                        <th>Utolsó esemény</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngIf="users != null">
+                        <tr routerLink="/personbyid/{{user.id}}" *ngFor="let user of users.data">
+                            <td><img src="../../../assets/Matuesz Morawiecki.png"></td>
+                            <td><strong>{{user.name}}</strong></td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.erzekenyseg}}</td>
+                            <td>{{user.titulus}}</td>
+                            <td>Vácon</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+                                
+            </table>
+        </section>
+        
+    </main>
+    <a class="action_btn" routerLink="/main">Hozzáadás</a>    
+</body>

@@ -1,0 +1,79 @@
+<body>
+
+<div class="loginDiv">
+  <div>
+    <ng-container *ngIf="loading">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </ng-container>
+    <div *ngIf="error" class="error">
+      {{ error }}
+    </div>
+    <div>
+      <div>
+        <div class="content-wrapper">
+          <div class="title">{{ "login.loginLogo" | transloco }}</div>
+        </div>
+        <form [formGroup]="form" autocomplete="off" (ngSubmit)="submit()">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>{{ "login.loginEmail" | transloco }}</mat-label>
+            <input
+              type="email"
+              matInput
+              formControlName="email"
+              [errorStateMatcher]="matcher"
+              placeholder="{{ 'login.loginEmailPlaceholder' | transloco }}"
+            />
+            <mat-error
+              *ngIf="
+                form.controls['email'].hasError('email') &&
+                !form.controls['email'].hasError('required')
+              "
+            >
+              {{ "login.loginEmailValidateError" | transloco }}
+            </mat-error>
+            <mat-error *ngIf="form.controls['email'].hasError('required')">
+              {{ "login.loginEmailError1" | transloco }}
+              <strong>{{ "login.loginEmailError2" | transloco }}</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>{{ "login.loginPassword" | transloco }}</mat-label>
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              matInput
+              formControlName="password"
+              [placeholder]="'login.loginPasswordPlaceholder' | transloco"
+            />
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">{{
+              showPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+            <mat-error *ngIf="form.hasError('required', 'password')">
+              {{ "login.loginPasswordError" | transloco }}
+            </mat-error>
+          </mat-form-field>
+          <div class="button mt-15">
+            <button
+              class="loading w-100"
+              type="submit"
+              mat-raised-button
+              color="primary"
+              [disabled]="form.invalid || loading"
+            >
+              <ng-container *ngIf="loading">
+                {{ "login.loginButtonPressed" | transloco }}
+              </ng-container>
+              <ng-container *ngIf="!loading">
+                {{ "login.loginButton" | transloco }}
+              </ng-container>
+            </button>
+          </div>
+        </form>
+        <div class="mt-30">
+          <a routerLink="/register">{{ "login.loginRouteRegister" | transloco }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
